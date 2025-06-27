@@ -31,6 +31,14 @@ export default defineConfig({
                         {label: 'Installation', slug: 'getting-started/installation'},
                     ]
                 },
+                {
+                    label: 'Integrations',
+                    items: [
+                        {label: 'Home Assistant', slug: 'integrations/home-assistant-integration'},
+                        {label: 'ClickUp', slug: 'integrations/clickup-integration'},
+                        {label: 'Webhooks', slug: 'integrations/webhooks'},
+                    ]
+                },
             ],
             customCss: [
                 './src/styles/custom.css'
