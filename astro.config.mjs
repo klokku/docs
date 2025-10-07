@@ -14,10 +14,10 @@ export default defineConfig({
                 alt: 'Klokku Logo',
             },
             title: 'Docs',
-            social: {
-                github: 'https://github.com/klokku/klokku',
-                discord: 'https://discord.gg/RXU78auck',
-            },
+            social: [
+                {icon: 'github', label: 'GitHub', href: 'https://github.com/klokku/klokku'},
+                {icon: 'discord', label: 'Discord', href: 'https://discord.gg/RXU78auck'},
+            ],
             sidebar: [
                 {
                     label: "Home",
@@ -37,6 +37,7 @@ export default defineConfig({
                         {label: 'Home Assistant', slug: 'integrations/home-assistant-integration'},
                         {label: 'ClickUp', slug: 'integrations/clickup-integration'},
                         {label: 'Webhooks', slug: 'integrations/webhooks'},
+                        {label: 'Google Calendar', slug: 'integrations/google-calendar'},
                     ]
                 },
             ],

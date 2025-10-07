@@ -48,4 +48,4 @@ After installation, you need to configure the integration:
 
 Once configured, the integration will fetch your current and other active budgets from Klokku and make them available in Home Assistant as a select entity
 
-![Klokku entity in Home Assistant](home-assistant-integration-screenshot.png)
+![Klokku entity in Home Assistant](img/home-assistant-integration-screenshot.png)
