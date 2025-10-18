@@ -3,4 +3,47 @@ title: What is Klokku?
 description: Basic description of Klokku and its features 
 ---
 
-Work in progress...
+## What is Klokku?
+
+Klokku is a **personal time tracking application** designed to help you understand how you spend your time and make realistic plans within your available hours. Unlike productivity apps that promise to make you more efficient, Klokku focuses on helping you plan what can actually get done in a limited amount of time.
+
+## Core Philosophy
+Klokku doesn't promise to make you more productive. Instead, it helps you:
+- Understand where your time actually goes
+- Plan realistically within your time constraints
+- Make informed decisions about time allocation
+- Maintain balance in your daily routine
+
+## Key Features
+### Time Budgeting
+Create time budgets for different areas of your life. Allocate specific amounts of time to various task groups and activities, helping you think strategically about how you want to spend your time.
+### Weekly Planning Adjustments
+Life is unpredictable. Klokku allows you to adjust your weekly plans to keep them realistic and achievable. This ensures you don't overcommit while reserving time for what truly matters to you.
+### Automated Tracking
+Track your time manually or use automations to update your current activity. Klokku integrates with various tools to automatically switch your active budget based on what you're working on.
+### Data Analysis and Insights
+- Visualize your time usage patterns through charts and statistics
+- Understand long-term trends in how you spend time
+- Identify areas where adjustments might be beneficial
+- Learn from your data to make better planning decisions
+
+### Integrations and Automation
+Klokku connects with popular tools and services:
+- **ClickUp** - integration allows you to map the tasks to the budgets
+- **Home Assistant** - integration allows you to use Klokku budget in the Home Assistant automation or change the active budget in Home Assistant 
+- **Google Calendar** - integration allows you to use Google Calendar to store your time use
+
+## Technical Features
+- **Open Source** - Use freely, modify the code, and contribute back to the community
+- **REST API** - Automate workflows and build custom integrations
+- **Webhooks** (work in progress) - flexible integration options like n8n, Zapier, and more
+
+## Use Cases
+Klokku is ideal for individuals who want to:
+- Set realistic boundaries around their time
+- Understand their actual time usage patterns
+- Plan projects and commitments more accurately
+- Maintain work-life balance
+- Make data-driven decisions about time allocation
+
+The application emphasizes sustainable time management practices rather than pushing for maximum productivity, making it suitable for anyone looking to achieve better balance and realistic planning in their personal and professional life.

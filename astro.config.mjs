@@ -29,6 +29,7 @@ export default defineConfig({
                         // Each item here is one entry in the navigation menu.
                         {label: 'What is Klokku', slug: 'getting-started/what-is-klokku'},
                         {label: 'Installation', slug: 'getting-started/installation'},
+                        {label: 'First steps', slug: 'getting-started/first-steps'},
                     ]
                 },
                 {
