@@ -15,12 +15,16 @@ Klokku doesn't promise to make you more productive. Instead, it helps you:
 - Maintain balance in your daily routine
 
 ## Key Features
+
 ### Time Budgeting
-Create time budgets for different areas of your life. Allocate specific amounts of time to various task groups and activities, helping you think strategically about how you want to spend your time.
+Create time budget items for different areas of your life. Allocate specific amounts of time to various task groups and activities, helping you think strategically about how you want to spend your time.
+
 ### Weekly Planning Adjustments
 Life is unpredictable. Klokku allows you to adjust your weekly plans to keep them realistic and achievable. This ensures you don't overcommit while reserving time for what truly matters to you.
+
 ### Automated Tracking
-Track your time manually or use automations to update your current activity. Klokku integrates with various tools to automatically switch your active budget based on what you're working on.
+Track your time manually or use automations to update your current activity. Klokku integrates with various tools to automatically switch your active budget item based on what you're working on.
+
 ### Data Analysis and Insights
 - Visualize your time usage patterns through charts and statistics
 - Understand long-term trends in how you spend time
@@ -29,8 +33,8 @@ Track your time manually or use automations to update your current activity. Klo
 
 ### Integrations and Automation
 Klokku connects with popular tools and services:
-- **ClickUp** - integration allows you to map the tasks to the budgets
-- **Home Assistant** - integration allows you to use Klokku budget in the Home Assistant automation or change the active budget in Home Assistant 
+- **ClickUp** - integration allows you to map the tasks to the budget items
+- **Home Assistant** - integration allows you to use Klokku current budget item in the Home Assistant automation or change the active budget item in Home Assistant 
 - **Google Calendar** - integration allows you to use Google Calendar to store your time use
 
 ## Technical Features
