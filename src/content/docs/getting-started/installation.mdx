@@ -2,23 +2,58 @@
 title: Installation
 description: How to install Klokku
 ---
-import { Steps } from '@astrojs/starlight/components';
+import {Steps, TabItem, Tabs} from '@astrojs/starlight/components';
 
 ## How to install Klokku
 
+The easiest way to run Klokku is using Docker Compose.
+Newest versions of Docker Desktop include Docker Compose built-in.
+
+### Quick Install
+<Tabs>
+    Run this command to download the configuration and start Klokku in a single step:
+    <TabItem label="Linux">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/klokku/klokku/main/install.sh | bash
+        ```
+    </TabItem>
+    <TabItem label="macOS">
+        ```bash
+        curl -sSL https://raw.githubusercontent.com/klokku/klokku/main/install.sh | bash
+        ```
+    </TabItem>
+    <TabItem label="Windows">
+        ```powershell
+        powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/klokku/klokku/main/install.ps1 | iex"
+        ```
+    </TabItem>
+</Tabs>
+
+You can now access Klokku at http://localhost:8181.
+
+
+### Manual Install
+
 <Steps>
-1. Open the console.
-2. Copy the following command:
-    ```shell
-    docker run -d --name klokku \
-       -p 8181:8181 \
-       -v storage:/app/storage \
-       -e KLOKKU_HOST="http://localhost:8181" \
-       ghcr.io/klokku/klokku:latest
+
+1. Download [docker-compose.yml](https://raw.githubusercontent.com/klokku/klokku/refs/heads/main/docker-compose.yml) to your local machine.
     ```
-3. Optionally, adjust your environmental variables (-e):
-   - `KLOKKU_HOST`: the URL address of your Klokku application.
-4. Run the command.
+    curl -O https://raw.githubusercontent.com/klokku/klokku/refs/heads/main/docker-compose.yml
+    ```
+2. Download database initialization file to `./db/init.sql`
+    ```
+    curl -sSL -o db/init.sql https://raw.githubusercontent.com/klokku/klokku/refs/heads/main/db/init.sql
+    ```
+3. Download [.env.template](https://raw.githubusercontent.com/klokku/klokku/refs/heads/main/.env.template) file to your local machine and rename it to `.env`
+    ```
+    curl -o .env https://raw.githubusercontent.com/klokku/klokku/refs/heads/main/.env.template
+    ```
+4. Adjust the configuration in `.env` file to your needs.
+5. Run the following command in the directory where you have placed the files:
+    ```
+    docker compose up -d
+    ```
+
 </Steps>
 
 You can now access Klokku at http://localhost:8181.

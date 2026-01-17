@@ -5,7 +5,7 @@ description: Installation and use of the Klokku Home Assistant integration
 
 # Klokku Home Assistant Integration
 
-Home Assistant integration for Klokku allows you to read and control your current budget from Home Assistant.
+Home Assistant integration for Klokku allows you to read and control your current budget item from Home Assistant.
 
 ## Prerequisites
 
@@ -46,6 +46,6 @@ After installation, you need to configure the integration:
    - **Username**: Your Klokku username for authentication
 6. Click **Submit** to add the integration.
 
-Once configured, the integration will fetch your current and other active budgets from Klokku and make them available in Home Assistant as a select entity
+Once configured, the integration will fetch your current and other active budget plan items from Klokku and make them available in Home Assistant as a select entity.
 
 ![Klokku entity in Home Assistant](img/home-assistant-integration-screenshot.png)
