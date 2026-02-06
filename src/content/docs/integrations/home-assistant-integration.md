@@ -10,7 +10,7 @@ Home Assistant integration for Klokku allows you to read and control your curren
 ## Prerequisites
 
 - A running Klokku instance
-- Home Assistant installation (>=2025.6.3)
+- Home Assistant installation (>=2025.11.3)
 
 ## Installation
 

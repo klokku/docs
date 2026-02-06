@@ -1,0 +1,66 @@
+---
+const { defaultUrl = "" } = Astro.props;
+---
+
+<div class="klokku-url-input" data-default-url={defaultUrl}>
+    <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 0.5rem; align-items: center;">
+        <input
+                id="klokku-url-input-field"
+                type="text"
+                inputmode="url"
+                placeholder={defaultUrl}
+                style="padding: 0.375rem 0.5rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.25rem; font-size: 0.8125rem; margin: 0;"
+        />
+        <button type="button" id="klokku-url-save" style="all: unset; padding: 0.375rem 0.75rem; white-space: nowrap; font-size: 0.8125rem; background: var(--sl-color-accent); color: var(--sl-color-white); border-radius: 0.25rem; cursor: pointer; box-sizing: border-box;">Save</button>
+        <button type="button" id="klokku-url-reset" style="all: unset; padding: 0.375rem 0.75rem; white-space: nowrap; font-size: 0.8125rem; background: var(--sl-color-gray-5); color: var(--sl-color-text); border-radius: 0.25rem; cursor: pointer; box-sizing: border-box;">Reset</button>
+    </div>
+</div>
+
+<script is:inline>
+    (() => {
+        const root = document.currentScript?.parentElement;
+        if (!root) return;
+
+        const defaultUrl = root.dataset.defaultUrl ?? "";
+        const input = root.querySelector("#klokku-url-input-field");
+        const saveBtn = root.querySelector("#klokku-url-save");
+        const resetBtn = root.querySelector("#klokku-url-reset");
+
+        const STORAGE_KEY = "klokkuUrlOverride";
+        const EVENT_NAME = "klokkuUrl:change";
+
+        const normalizeBaseUrl = (value) => String(value || "").trim().replace(/\/+$/, "");
+        const getEffectiveUrl = () => normalizeBaseUrl(localStorage.getItem(STORAGE_KEY) || defaultUrl);
+
+        const publish = (value) => {
+            window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: { value } }));
+        };
+
+        const setInput = (value) => {
+            if (!input) return;
+            input.value = value;
+        };
+
+        const effective = getEffectiveUrl();
+        setInput(effective);
+        publish(effective);
+
+        saveBtn?.addEventListener("click", () => {
+            const v = normalizeBaseUrl(input?.value);
+            localStorage.setItem(STORAGE_KEY, v);
+            publish(v);
+        });
+
+        resetBtn?.addEventListener("click", () => {
+            localStorage.removeItem(STORAGE_KEY);
+            const v = getEffectiveUrl();
+            setInput(v);
+            publish(v);
+        });
+
+        // Optional: live-update display while typing (without saving)
+        input?.addEventListener("input", () => {
+            publish(normalizeBaseUrl(input.value));
+        });
+    })();
+</script>

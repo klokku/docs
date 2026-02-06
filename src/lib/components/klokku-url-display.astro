@@ -1,0 +1,90 @@
+---
+import { klokkuUrl } from "../constants.ts";
+import { Code } from "@astrojs/starlight/components";
+
+const { prefix = "", postfix = "", as = "code" } = Astro.props;
+
+const defaultUrl = klokkuUrl;
+
+const isLink = as === "a";
+const isCodeBlock = as === "code-block";
+
+const InlineTag = isLink ? "a" : "code";
+const initialFullUrl = `${prefix}${defaultUrl}${postfix}`;
+---
+
+<span
+    class="klokku-url-display"
+    data-default-url={defaultUrl}
+    data-prefix={prefix}
+    data-postfix={postfix}
+    data-as={as}
+>
+  {
+    isCodeBlock ? (
+        <div class="klokku-url-display__code-block">
+          <Code code={initialFullUrl} lang="text" />
+        </div>
+    ) : (
+        <InlineTag class="klokku-url-display__value"></InlineTag>
+    )
+  }
+</span>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".klokku-url-display").forEach((root) => {
+      const defaultUrl = root.dataset.defaultUrl ?? "";
+      const prefix = root.dataset.prefix ?? "";
+      const postfix = root.dataset.postfix ?? "";
+      const as = root.dataset.as ?? "code";
+
+      const STORAGE_KEY = "klokkuUrlOverride";
+      const EVENT_NAME = "klokkuUrl:change";
+
+      const normalizeBaseUrl = (value) => String(value || "").trim().replace(/\/+$/, "");
+      const getEffectiveUrl = () => normalizeBaseUrl(localStorage.getItem(STORAGE_KEY) || defaultUrl);
+
+      const render = (value) => {
+        const fullUrl = prefix + value + postfix;
+
+        // Code-block mode: preserve Expressive Code’s internal structure (padding, line wrappers, etc.)
+        if (as === "code-block") {
+          const spanEl =
+              root.querySelector(".klokku-url-display__code-block .expressive-code .code span") ||
+              root.querySelector(".expressive-code .code span");
+
+          if (spanEl) spanEl.textContent = fullUrl;
+
+          const copyBtn =
+              root.querySelector(".klokku-url-display__code-block .expressive-code .copy button[data-code]") ||
+              root.querySelector(".expressive-code .copy button[data-code]");
+          if (copyBtn) copyBtn.setAttribute("data-code", fullUrl);
+
+          return;
+        }
+
+        // Inline mode:
+        const valueEl = root.querySelector(".klokku-url-display__value");
+        if (!valueEl) return;
+
+        valueEl.textContent = fullUrl;
+
+        if (as === "a" && valueEl instanceof HTMLAnchorElement) {
+          valueEl.href = fullUrl;
+        }
+      };
+
+      render(getEffectiveUrl());
+
+      window.addEventListener(EVENT_NAME, (e) => {
+        render(normalizeBaseUrl(e?.detail?.value));
+      });
+
+      window.addEventListener("storage", (e) => {
+        if (e.key !== STORAGE_KEY) return;
+        render(getEffectiveUrl());
+      });
+    });
+  });
+</script>

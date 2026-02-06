@@ -21,26 +21,35 @@ export default defineConfig({
             sidebar: [
                 {
                     label: "Home",
-                    slug: ""
+                    slug: "",
                 },
                 {
                     label: 'Getting started',
                     items: [
                         // Each item here is one entry in the navigation menu.
                         {label: 'What is Klokku', slug: 'getting-started/what-is-klokku'},
+                        {label: 'Documentation', slug: 'getting-started/documentation'},
                         {label: 'Installation', slug: 'getting-started/installation'},
                         {label: 'First steps', slug: 'getting-started/first-steps'},
+                    ]
+                },
+                {
+                    label: 'Automations',
+                    items: [
+                        {label: 'Overview', slug: 'automations/overview'},
+                        {label: 'Automate (Android)', slug: 'automations/android-automate'},
                     ]
                 },
                 {
                     label: 'Integrations',
                     items: [
                         {label: 'Home Assistant', slug: 'integrations/home-assistant-integration'},
+                        {label: 'Garmin Watch App', slug: 'integrations/garmin-watch-app'},
                         {label: 'ClickUp', slug: 'integrations/clickup-integration'},
-                        {label: 'Webhooks', slug: 'integrations/webhooks'},
+                        {label: 'Incoming Webhooks', slug: 'integrations/incoming-webhooks'},
                         {label: 'Google Calendar', slug: 'integrations/google-calendar'},
                     ]
-                },
+                }
             ],
             customCss: [
                 './src/styles/custom.css'

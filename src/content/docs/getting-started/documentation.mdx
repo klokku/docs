@@ -1,0 +1,14 @@
+---
+title: Documentation
+description: How to use this documentation
+---
+import KlokkuUrlOverride from "../../../lib/components/klokku-url-input.astro";
+import {klokkuUrl} from "../../../lib/constants";
+
+## About this documentation
+
+This documentation works for both the managed Klokku service at https://app.klokku.com and the self-hosted version, unless explicitly stated otherwise.
+
+By default, it shows URLs for the managed service, but you can set the URL to point to your self-hosted instance here, so it displays the correct links:
+
+<KlokkuUrlOverride client:load defaultUrl={klokkuUrl}/>
