@@ -45,6 +45,7 @@ export default defineConfig({
                     items: [
                         {label: 'Home Assistant', slug: 'integrations/home-assistant-integration'},
                         {label: 'Garmin Watch App', slug: 'integrations/garmin-watch-app'},
+                        {label: 'MacOS Menubar App', slug: 'integrations/macos-menubar-app'},
                         {label: 'ClickUp', slug: 'integrations/clickup-integration'},
                         {label: 'Incoming Webhooks', slug: 'integrations/incoming-webhooks'},
                         {label: 'Google Calendar', slug: 'integrations/google-calendar'},
