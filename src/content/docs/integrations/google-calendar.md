@@ -3,6 +3,11 @@ title: Google Calendar Integration
 description: How to enable storing events in Google Calendar 
 ---
 
+:::note[Only for self-hosted version]
+This feature is currently only available for self-hosted version of Klokku.\
+Join our [Discord community](https://discord.gg/RXU78auck) to let us know if you are interested in using it with our hosted version.
+:::
+
 Klokku supports storing events in Google Calendar instead of the internal database.
 You can switch to Google Calendar integration in the **Calendar integration** section of the **Profile** page. 
 
