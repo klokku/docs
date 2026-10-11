@@ -31,6 +31,7 @@ export default defineConfig({
                         {label: 'Documentation', slug: 'getting-started/documentation'},
                         {label: 'Installation', slug: 'getting-started/installation'},
                         {label: 'First steps', slug: 'getting-started/first-steps'},
+                        {label: 'Mobile app', slug: 'getting-started/mobile-app'},
                     ]
                 },
                 {
