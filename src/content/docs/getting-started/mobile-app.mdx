@@ -1,0 +1,106 @@
+---
+title: Mobile app
+description: Add Klokku to your home screen on Android or iOS.
+---
+import {Steps} from '@astrojs/starlight/components';
+
+:::note[Only for managed version]
+This feature is currently only available for Klokku on [app.klokku.com](https://app.klokku.com).
+:::
+
+Use [app.klokku.com](https://app.klokku.com) as an app on your Android phone, iPhone, or iPad.
+Adding Klokku to your home screen gives you an app icon and opens Klokku in its own window without the usual browser address bar.
+This is a progressive web app (PWA), installed through your browser.
+You do not need an App Store or Google Play download.
+
+:::note[Internet connection required]
+Klokku needs an internet connection to load your data and save changes.
+If you open the installed app while offline, it shows a reconnect screen with **Retry connection**.
+Offline changes are not queued for later synchronization.
+:::
+
+## Android
+
+Use Chrome for these instructions.
+Other browsers may offer similar installation options with different menu labels.
+
+<Steps>
+
+1. Open [app.klokku.com](https://app.klokku.com) in Chrome and sign in or create an account.
+2. In Klokku, open your user menu using your avatar and choose **Install Klokku**.
+   If Chrome offers an installation prompt, choose **Install** and follow the on-screen instructions.
+3. If no installation prompt appears, open Chrome's three-dot menu beside the address bar.
+   Choose **Install app** or **Add to Home screen**, then choose **Install** when offered.
+   Some Chrome versions group these options under **Install and create shortcut**.
+4. Open **Klokku** from your home screen or app launcher.
+
+</Steps>
+
+The browser decides when the native install prompt is available.
+If the in-app menu shows instructions instead, you can still check Chrome's installation menu.
+
+## iPhone and iPad
+
+Use Safari for these instructions.
+On iPhone, the **Install Klokku** menu item explains the steps; iOS installation is a manual browser action.
+On iPad, use Safari's Share menu directly.
+
+<Steps>
+
+1. Open [app.klokku.com](https://app.klokku.com) in Safari and sign in or create an account.
+2. Tap **Share**, shown as a square with an upward arrow.
+   Depending on your Safari layout, you may need to open the **More** menu first to find Share.
+3. Scroll through the share actions and choose **Add to Home Screen**.
+4. Keep **Open as Web App** enabled if your iOS version shows this option.
+   Confirm the name **Klokku**, then tap **Add**.
+5. Open **Klokku** using its new home-screen icon.
+
+</Steps>
+
+If **Add to Home Screen** is missing, scroll to **Edit Actions** in the share sheet and add it.
+
+## First launch
+
+You may need to sign in again when you first open the installed app, especially on iOS.
+Use the same Klokku account to access your existing profiles and data.
+Adding the app does not create a separate account.
+
+The **Install Klokku** menu item appears only on Android phones and iPhones, between **Integrations** and **Help & Feedback**.
+It is hidden on desktop systems, tablets, and when you use the installed app in its standalone window.
+
+## Updates
+
+When a new version is ready while Klokku is open, the app shows an update notice.
+Save any unfinished edits, then choose **Reload** to apply it.
+Other open Klokku windows wait for you to choose **Reload** in those windows too.
+
+Choose **Later** to continue your current session without reloading.
+The update can be offered again on a later launch, or activate once all Klokku windows are closed.
+You do not need to remove and reinstall the app for normal updates.
+
+## Troubleshooting
+
+### There is no install option
+
+- Open Klokku in a regular browser tab rather than a private or incognito tab.
+- If you followed a link inside a chat, email, or social app, use its **Open in browser** action or copy the address into Chrome on Android or Safari on iOS.
+- Check whether Klokku is already installed by looking for its app icon.
+- Update your browser and check its installation menu again.
+- If installation remains unavailable, use [app.klokku.com](https://app.klokku.com) in your browser.
+
+### The icon opens a normal browser tab
+
+You may have added a shortcut rather than installed the web app.
+On Android, look for **Install** rather than **Create shortcut** when the browser offers a choice.
+On iOS, add Klokku from Safari and keep **Open as Web App** enabled if shown.
+Remove the shortcut and repeat the steps above.
+
+### Klokku cannot connect
+
+Check your Wi-Fi or mobile data connection, then choose **Retry connection**.
+When the connection returns in an already-open app, Klokku lets you continue without reloading your unfinished edits.
+If your session expired while disconnected, Klokku shows **Sign in to continue**.
+Sign in with the same account in that window, then choose **Continue after signing in** to return to your unfinished edits.
+If the connection is working but Klokku still cannot load, try opening [app.klokku.com](https://app.klokku.com) in your browser to check whether the service is available.
+
+For the browser's own installation instructions, see [Chrome's web app guide](https://support.google.com/chrome/answer/9658361?hl=en&co=GENIE.Platform%3DAndroid) and [Apple's home-screen guide](https://support.apple.com/guide/iphone/iph42ab2f3a7/ios).
